@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>OverflowTests</title>
+        <style>html,head,body { padding:0; margin:0; }body { font-family: calibri, helvetica, arial, sans-serif; }</style>
+        <script type="text/javascript" src="overflow-tests.js"></script>
+    </head>
+    <body>
+        <script>
+
+            var maxRecursion = 0;
+            try {
+                (function recurse() {
+                    maxRecursion++;
+                    recurse();
+                })();
+            } catch(e) {
+                Elm.OverflowTests.fullscreen(maxRecursion);
+            }
+        </script>
+    </body>
+</html>
